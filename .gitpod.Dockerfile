@@ -1,8 +1,8 @@
 FROM  gitpod/workspace-base
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-ARG CONTAINER_USER=esp
-ARG CONTAINER_GROUP=esp
+ARG CONTAINER_USER=gitpod
+ARG CONTAINER_GROUP=gitpod
 ARG ESP_BOARD=esp32
 ARG ESP_IDF_VERSION=release/v4.4
 RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip \
