@@ -9,7 +9,7 @@ ARG ESP_IDF_VERSION=release/v4.4
 RUN apt-get update \
     && apt-get install -y git curl wget flex bison gperf python3 python3-pip \
     python3-setuptools ninja-build ccache libffi-dev libssl-dev dfu-util \
-    libusb-1.0-0  libpython2.7 \
+    libusb-1.0-0 libpython2.7 \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 RUN adduser --disabled-password --gecos "" ${CONTAINER_USER}
 USER ${CONTAINER_USER}

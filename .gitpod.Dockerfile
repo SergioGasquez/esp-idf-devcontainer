@@ -7,13 +7,13 @@ ARG ESP_BOARD=esp32
 ARG ESP_IDF_VERSION=release/v4.4
 RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip \
     python3-setuptools ninja-build ccache libffi-dev libssl-dev dfu-util \
-    libusb-1.0-0  libpython2.7
+    libusb-1.0-0 libpython2.7
 RUN adduser --disabled-password --gecos "" ${CONTAINER_USER}
 USER ${CONTAINER_USER}
 ENV USER=${CONTAINER_USER}
 WORKDIR /home/${CONTAINER_USER}
 RUN mkdir -p .espressif/frameworks/ \
-    && git clone --branch ${ESP_IDF_VERSION} -q --depth 1 --shallow-submodules \
+    && git clone --branch ${ESP_IDF_VERSION} --depth 1 --shallow-submodules \
     --recursive https://github.com/espressif/esp-idf.git \
     .espressif/frameworks/esp-idf-v4.4 \
     && python3 .espressif/frameworks/esp-idf-v4.4/tools/idf_tools.py install cmake \
