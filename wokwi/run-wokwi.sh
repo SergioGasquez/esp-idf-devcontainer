@@ -3,7 +3,7 @@ set -e
 if [ "$USER" = "esp" ]; then
 path="/home/esp/workspace"
 else
-path="/workspace/espressif-trainings"
+path="/workspace/esp-idf-devcontainer"
 fi
 pip3 install websockets==10.2
 echo Building and running Wokwi simulation for: $CURRENT_PROJECT
