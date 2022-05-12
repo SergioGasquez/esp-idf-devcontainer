@@ -11,10 +11,10 @@ RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip 
     libusb-1.0-0 libpython2.7
 USER ${CONTAINER_USER}
 WORKDIR /home/${CONTAINER_USER}
-# RUN mkdir -p .espressif/frameworks/ \
-#     && git clone --branch ${ESP_IDF_VERSION} --depth 1 --shallow-submodules \
-#     --recursive https://github.com/espressif/esp-idf.git \
-#     .espressif/frameworks/esp-idf \
-#     && python3 .espressif/frameworks/esp-idf/tools/idf_tools.py install cmake \
-#     && .espressif/frameworks/esp-idf/install.sh ${ESP_BOARD}
-# ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
+RUN mkdir -p .espressif/frameworks/ \
+    && git clone --branch ${ESP_IDF_VERSION} --depth 1 --shallow-submodules \
+    --recursive https://github.com/espressif/esp-idf.git \
+    .espressif/frameworks/esp-idf \
+    && python3 .espressif/frameworks/esp-idf/tools/idf_tools.py install cmake \
+    && .espressif/frameworks/esp-idf/install.sh ${ESP_BOARD}
+ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
