@@ -6,9 +6,9 @@ ARG CONTAINER_GROUP=gitpod
 ARG ESP_BOARD=all
 ARG ESP_IDF_VERSION=release/v4.4
 # libpython2.7 is due to GDB
-# RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip \
-#     python3-setuptools ninja-build ccache libffi-dev libssl-dev dfu-util \
-#     libusb-1.0-0 libpython2.7
+RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip \
+    python3-setuptools ninja-build ccache libffi-dev libssl-dev dfu-util \
+    libusb-1.0-0 libpython2.7
 # RUN adduser --disabled-password --gecos "" ${CONTAINER_USER}
 # USER ${CONTAINER_USER}
 # ENV USER=${CONTAINER_USER}
