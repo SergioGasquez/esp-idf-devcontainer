@@ -9,6 +9,8 @@ vscode:
     - espressif.esp-idf-extension
     - anwar.resourcemonitor
     - yzhang.markdown-all-in-one
+    - webfreak.debug
+    - actboy168.tasks
 ports:
   - port: 9012
     visibility: public

@@ -15,12 +15,15 @@
     "editor.formatOnType": true,
     "idf.espIdfPath": "${env:IDF_PATH}",
     "idf.toolsPath": "${env:IDF_TOOLS_PATH}",
-    "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python"
+    "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python",
+    "idf.customExtraPaths": "${env:PATH}"
   },
   "extensions": [
     "mutantdino.resourcemonitor",
     "yzhang.markdown-all-in-one",
-    "espressif.esp-idf-extension"
+    "espressif.esp-idf-extension",
+    "webfreak.debug",
+    "actboy168.tasks"
   ],
   "forwardPorts": [
     9012,
