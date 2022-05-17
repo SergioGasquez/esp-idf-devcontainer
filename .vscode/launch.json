@@ -20,7 +20,7 @@
       "executable": "${workspaceFolder}/build/app-template.elf",
       "target": "localhost:9333",
       "remote": true,
-      "gdbpath": "/home/gitpod/.espressif/tools/xtensa-esp32-elf/esp-2021r2-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
+      "gdbpath": "/home/gitpod/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
       "cwd": "${workspaceRoot}",
       "stopAtConnect": true,
       "valuesFormatting": "parseText"
