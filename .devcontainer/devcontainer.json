@@ -13,10 +13,9 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
     "editor.formatOnType": true,
-    "lldb.executable": "/usr/bin/lldb",
-    "files.watcherExclude": {
-      "**/target/**": true
-    }
+    "idf.espIdfPath": "${env:IDF_PATH}",
+    "idf.toolsPath": "${env:IDF_TOOLS_PATH}",
+    "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python"
   },
   "extensions": [
     "mutantdino.resourcemonitor",
