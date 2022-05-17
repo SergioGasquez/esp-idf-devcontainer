@@ -10,7 +10,7 @@
         "export  PROJECT_PATH=${cwd}",
         "&& export PROJECT_NAME=app-template",
         "&& pip3 install websockets==10.2",
-        "&& python3 wokwi/wokwi-server.py"
+        "&& bash wokwi/run-wokwi.sh"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
