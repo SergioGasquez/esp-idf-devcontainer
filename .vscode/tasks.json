@@ -4,22 +4,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build Project",
-      "type": "shell",
-      "command": [
-        "export  PROJECT_PATH=${cwd}",
-        "&& export PROJECT_NAME=app-template",
-        "&& idf.py build"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
       "label": "Build & Run Wokwi Simulation",
       "type": "shell",
       "command": [
@@ -32,7 +16,7 @@
         "cwd": "${workspaceFolder}"
       },
       "group": {
-        "kind": "test",
+        "kind": "build",
         "isDefault": true
       }
     },
