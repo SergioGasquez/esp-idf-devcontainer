@@ -13,12 +13,28 @@ Espressif IDF extension is already configured in the devcontainer and can be use
 for configuring and building the project but flashingwith the extension is not possible.
 
 # Quick Start
+
 ## Setup
+Before opening the Dev Container, please set up your desired configuration:
+1. Choose `ESP_BOARD` and `ESP_IDF_VERSION` on `.devcontainer/devcontainer.json`
+   and `.gitpod.Dockerfile`.
+1. Choose `ESP_BOARD` on `run-wokwi.sh` and `flash.sh`
+1. If you want to use some parts in Wokwi and want to use a custom Wokwi project,
+   update `WOKWI_PROJECT_ID` on `run-wokwi.sh`.
+   > **Note**
+   >
+   > If no project is specified the selected chip will be used.
+1. If you want to have debugging support with IDE, select the proper `gdbpath`
+   in `launch.json`
+
+After setting the repository, run the devcontainer, see instructions:
 -  [Gitpod](https://gitpod.io/): Gitpod does not require any special setup, it
 only requires an account which can be created with Bitbucket, GitLab or GitHub.
--  Vs Code Devcontainers: See [installation](https://code.visualstudio.com/docs/remote/containers#_installation) and the [quick start](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container) sections.
+-  Vs Code Devcontainers: See [installation](https://code.visualstudio.com/docs/remote/containers#_installation)
+and the [quick start](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container) sections.
 -  GitHub Codespaces: The user needs to be part of the Codespaces beta or the repository must live under an organization.
    - When using GitHub Codespaces we need to make ports public, [see instructions](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace#sharing-a-port).
+
 ## Build
 - UI approach:
   - Use the build button from the extension in the status bar.
