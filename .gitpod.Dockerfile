@@ -17,4 +17,14 @@ RUN mkdir -p .espressif/frameworks/ \
     .espressif/frameworks/esp-idf \
     && python3 .espressif/frameworks/esp-idf/tools/idf_tools.py install cmake \
     && .espressif/frameworks/esp-idf/install.sh ${ESP_BOARD}
+RUN curl -L https://github.com/bjoernQ/esp-web-flash-server/releases/latest/download/web-flash-x86_64-unknown-linux-gnu.zip \
+    -o /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash.zip \
+    && unzip /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash.zip \
+    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/
+RUN chmod u+x /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash
+RUN curl -L https://github.com/MabezDev/wokwi-server/releases/latest/download/wokwi-server-x86_64-unknown-linux-gnu.zip \
+    -o /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server.zip \
+    && unzip /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server.zip \
+    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/
+RUN chmod u+x /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server
 ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
