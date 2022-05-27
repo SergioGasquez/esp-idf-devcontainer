@@ -1,100 +1,31 @@
 # esp-idf-devcontainer
 
-This repository uses a container to offer the environment needed to develop applications for [ESP
-boards using ESP-IDF](https://github.com/espressif/esp-idf), it also provides integration with Visual Studio Code using [remote containers](https://code.visualstudio.com/docs/remote/containers).
+This repository is a devcontainer version of [espressif/esp-idf-template](https://github.com/espressif/esp-idf-template)
+that supports:
+-  [Gitpod](https://gitpod.io/): [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/github.com/SergioGasquez/esp-idf-devcontainer/)
+-  [Vs Code Devcontainers](https://code.visualstudio.com/docs/remote/containers)
+-  [GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace)
 
 For instructions on how to integrate devcontainers to existing repositories, see
 [this section](#integrating-devcontainer-in-existing-repositories).
 
-Developing projects for ESP boards in an online environment is also available with [Gitpod](https://www.gitpod.io/):
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/github.com/SergioGasquez/esp-idf-devcontainer/)
-
-This repository is can be used as template repository.
-
-## Table of Contents
-
-- [Quick Start](#quick-start)
-  - [Requirements](#requirements)
-  - [Setup](#setup)
-  - [Running the container](#running-the-container)
-  - [Build](#build)
-  - [Flash](#flash)
-    - [Cargo espflash](#cargo-espflash)
-    - [Adafruit ESPTool](#adafruit-esptool)
-  - [Monitor](#monitor)
-    - [Online Serial Monitor](#online-serial-monitor)
-- [Wokwi Simulator](#wokwi-simulator)
-- [Integrating devcontainer in existing repositories](#integrating-devcontainer-in-existing-repositories)
+Espressif IDF extension is already configured in the devcontainer and can be used
+for configuring and building the project but flashingwith the extension is not possible.
 
 # Quick Start
-
-## Requirements
-
-- [Visual Studio Code](https://code.visualstudio.com/download)
-  - [Remote - Container Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [Docker](https://docs.docker.com/get-docker/)
-> ### Using Podman instead of Docker
-> Using Podman as container tool is possible when using a Linux host machine.
-> When using Podman, flashing devices from the container is possible.
->
-> > There has been some testing using Lima and Podman in other platforms but with
-> > no success so far. Feel free to test with them and report any feedback.
-> #### Requirements
->   - [Install Podman](https://podman.io/getting-started/installation)
->   -  Uncomment the `runArgs` line from `devcontianer.json`:
->
->       ```
->       "runArgs": ["--userns=keep-id", "--device", "/dev/ttyUSB0", "--security-opt", "label=disable", "--annotation", "run.oci.keep_original_groups=1"],
->       ```
->      - Edit the device argument to match the serial port of your board.
->   - Edit Visual Code Settings:
->     -  Via UI: In _Extension>Remote-Containers_ set `Remote›Containers:Docker Path`
->   to `podman`
->     -  Via JSON: Add the following line:
->         ```
->         "remote.containers.dockerPath": "podman",
->         ```
-
 ## Setup
-
-Select the tag of the [sergiogasquez/esp-idf-env](https://hub.docker.com/r/sergiogasquez/esp-idf-env)
-image you would like to use by modifying the `image` property in
-`devcontainer.json`.
-For more information regarding the image tags, refer to [esp-idf-container](https://github.com/SergioGasquez/esp-idf-container).
-
-
-## Running the container
-
-1. Open the folder with Visual Studio Code and open the container, there are
-   several ways to open the container:
-   1. When opening Visual Studio Code, a popup will come up asking to open reopen the folder in a Container, click `Reopen in Container`
-   1. Open the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and select `Remote-Containers: Reopen in Container`
-   2. Use the open in a remote window button on the bottom left corner to
-   `Reopen in Container`
-2. Wait for the container to build and run, once the container is running, you
-   should have a working environment to develop ESP boards using Rust
-   - If you want to generate an application using the [esp-idf-template](https://github.com/esp-idf/esp-idf-template) use:
-     - `cargo generate --git https://github.com/esp-idf/esp-idf-template cargo`
-    > There is also a `no_std` template project: https://github.com/esp-idf/esp-template
-
-    > Be sure to match the installed environment in the selected image tag (espidf version and board)
-
+-  [Gitpod](https://gitpod.io/): Gitpod does not require any special setup, it
+only requires an account which can be created with Bitbucket, GitLab or GitHub.
+-  Vs Code Devcontainers: See [installation](https://code.visualstudio.com/docs/remote/containers#_installation) and the [quick start](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container) sections.
+-  GitHub Codespaces: The user needs to be part of the Codespaces beta or the repository must live under an organization.
+   - When using GitHub Codespaces we need to make ports public, [see instructions](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace#sharing-a-port).
 ## Build
+- UI approach:
+  - Use the build button from the extension in the status bar.
 - Terminal approach:
     ```bash
-    ./run-wokwi.sh
+    idf.py build
     ```
-- [Devcontainers] UI approach:
-
-    The default build task is already set to build the project, and it can be used
-    in VsCode and Gitpod:
-    - From the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (`Ctrl-Shift-P` or `Cmd-Shift-P`) run the `Tasks: Run Build Task` command.
-    - `Terminal`-> `Run Build Task` in the menu.
-    - With `Ctrl-Shift-B` or `Cmd-Shift-B`.
-    - From the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (`Ctrl-Shift-P` or `Cmd-Shift-P`) run the `Tasks: Run Task` command and
-    select `Build Project`.
-    - From UI: Press `Build Project` on the left side of the Status Bar.
-
 
 ## Flash
 - Use idf.py (`idf.py -p PORT [-b BAUD] flash`) from the host device.
@@ -104,8 +35,6 @@ For more information regarding the image tags, refer to [esp-idf-container](http
   3. Connect to the serial port of the ESP board.
   4. Upload the generated binary.
 Any other method of flashing ESP boards from your host device should work.
-
-
 
 # Wokwi Simulator
 
@@ -134,6 +63,9 @@ Wokwi offers debugging with GDB.
     $HOME/.espressif/tools/xtensa-esp32-elf/esp-2021r2-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb \
     target/xtensa-esp32-espidf/debug/rustzx-esp32 -ex "target remote localhost:9333"
     ```
+    > ** Note **
+    >
+    > If using another target be sure to modify `gdbpath` of `.vscode/launch.json`.
 - [Devcontainers] UI approach:
 
     Debug using with VsCode or Gitpod is also possible:
