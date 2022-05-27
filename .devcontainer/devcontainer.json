@@ -1,13 +1,13 @@
 {
   "name": "esp-idf",
-  "image": "docker.io/sergiogasquez/esp-idf-env:v4.4_all",
-  // "build": {
-  //   "dockerfile": "Dockerfile",
-  //   "args": {
-  //     "ESP_BOARD": "esp32",
-  //     "ESP_IDF_VERSION": "release/v4.4"
-  //   }
-  // },
+  // "image": "docker.io/sergiogasquez/esp-idf-env:v4.4_all",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "ESP_BOARD": "esp32",
+      "ESP_IDF_VERSION": "release/v4.4"
+    }
+  },
   "settings": {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -27,7 +27,8 @@
   ],
   "forwardPorts": [
     9012,
-    9333
+    9333,
+    8000
   ],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/esp/workspace,type=bind,consistency=cached",
   "workspaceFolder": "/home/esp/workspace/"
