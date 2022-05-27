@@ -14,11 +14,10 @@ elif [ "${CODESPACE_NAME}" != "" ];then
 fi
 
 export ESP_BOARD="esp32"
-export ESP_ELF="app-template.elf"
 export WOKWI_PROJECT_ID=""
 if [ "${WOKWI_PROJECT_ID}" == "" ]; then
-    wokwi-server --chip ${ESP_BOARD} build/${ESP_ELF}
+    wokwi-server --chip ${ESP_BOARD} build/app-template.elf
 else
-    wokwi-server --chip ${ESP_BOARD} --id ${WOKWI_PROJECT_ID} build/${ESP_ELF}
+    wokwi-server --chip ${ESP_BOARD} --id ${WOKWI_PROJECT_ID} build/app-template.elf
 fi
 

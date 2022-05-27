@@ -1,6 +1,5 @@
 {
   "name": "esp-idf",
-  // "image": "docker.io/sergiogasquez/esp-idf-env:v4.4_all",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
@@ -17,7 +16,6 @@
     "idf.toolsPath": "${env:IDF_TOOLS_PATH}",
     "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python",
     "idf.customExtraPaths": "${env:PATH}"
-    // "idf.adapterTargetName": "esp32",
   },
   "extensions": [
     "mutantdino.resourcemonitor",

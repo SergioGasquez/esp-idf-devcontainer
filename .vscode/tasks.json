@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Flash",
+      "label": "Build & Flash",
       "type": "shell",
       "command": "bash flash.sh",
       "options": {
@@ -16,7 +16,7 @@
       }
     },
     {
-      "label": "Run Wokwi",
+      "label": "Build & Run Wokwi Simulation",
       "type": "shell",
       "command": "bash run-wokwi.sh",
       "options": {
