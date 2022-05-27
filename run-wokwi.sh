@@ -12,7 +12,7 @@ if [ "${USER}" == "gitpod" ];then
 elif [ "${CODESPACE_NAME}" != "" ];then
     export WOKWI_HOST=${CODESPACE_NAME}-9012.githubpreview.dev
 fi
-
+# Choose ESP_BOARD: [esp32, esp32c3, esp32s2, esp32s3]
 export ESP_BOARD="esp32"
 export WOKWI_PROJECT_ID=""
 if [ "${WOKWI_PROJECT_ID}" == "" ]; then

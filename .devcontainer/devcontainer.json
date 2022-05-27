@@ -3,7 +3,9 @@
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
+      // Choose ESP_BOARD: [esp32, esp32c3, esp32s2, esp32s3, all]
       "ESP_BOARD": "esp32",
+      // Choose ESP_IDF_VERSION: esp-idf branch
       "ESP_IDF_VERSION": "release/v4.4"
     }
   },

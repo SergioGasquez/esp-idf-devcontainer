@@ -3,7 +3,9 @@ ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 ARG CONTAINER_USER=gitpod
 ARG CONTAINER_GROUP=gitpod
+# Choose ESP_BOARD: [esp32, esp32c3, esp32s2, esp32s3, all]
 ARG ESP_BOARD=esp32
+# Choose ESP_IDF_VERSION: esp-idf branch
 ARG ESP_IDF_VERSION=release/v4.4
 # libpython2.7 is due to GDB
 RUN sudo install-packages -y git curl wget flex bison gperf python3 python3-pip \
