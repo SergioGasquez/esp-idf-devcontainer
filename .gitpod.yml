@@ -16,3 +16,6 @@ ports:
     visibility: public
   - port: 9333
     visibility: public
+  - port: 8000
+    visibility: public
+    onOpen: open-browser
