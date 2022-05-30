@@ -25,12 +25,14 @@ RUN mkdir -p .espressif/frameworks/ \
 RUN curl -L https://github.com/bjoernQ/esp-web-flash-server/releases/latest/download/web-flash-x86_64-unknown-linux-gnu.zip \
     -o /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash.zip \
     && unzip /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash.zip \
-    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/
+    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/ \
+    && rm /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash.zip
 RUN chmod u+x /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/web-flash
 RUN curl -L https://github.com/MabezDev/wokwi-server/releases/latest/download/wokwi-server-x86_64-unknown-linux-gnu.zip \
     -o /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server.zip \
     && unzip /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server.zip \
-    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/
+    -d /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/ \
+    && rm /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server.zip
 RUN chmod u+x /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/tools/wokwi-server
 ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
 RUN echo "source /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/export.sh > /dev/null 2>&1" >> ~/.bashrc
