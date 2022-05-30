@@ -1,16 +1,16 @@
 # esp-idf-devcontainer
 
-This repository is a devcontainer version of [espressif/esp-idf-template](https://github.com/espressif/esp-idf-template)
+This repository is a Dev Container version of [espressif/esp-idf-template](https://github.com/espressif/esp-idf-template)
 that supports:
 -  [Gitpod](https://gitpod.io/): [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/github.com/SergioGasquez/esp-idf-devcontainer/)
--  [Vs Code Devcontainers](https://code.visualstudio.com/docs/remote/containers)
+-  [Vs Code Dev Containers](https://code.visualstudio.com/docs/remote/containers)
 -  [GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace)
 
-For instructions on how to integrate devcontainers to existing repositories, see
+For instructions on how to integrate dev containers to existing repositories, see
 [this section](#integrating-devcontainer-in-existing-repositories).
 
-Espressif IDF extension is already configured in the devcontainer and can be used
-for configuring and building the project but flashingwith the extension is not possible.
+Espressif IDF extension is already configured in the Dev Container and can be used
+for configuring and building the project but flashing with the extension is not possible.
 
 # Quick Start
 
@@ -27,10 +27,10 @@ Before opening the Dev Container, please set up your desired configuration:
 1. If you want to have debugging support with IDE, select the proper `gdbpath`
    in `launch.json`
 
-After setting the repository, run the devcontainer, see instructions:
+After setting the repository, run the Dev Container, see instructions:
 -  [Gitpod](https://gitpod.io/): Gitpod does not require any special setup, it
 only requires an account which can be created with Bitbucket, GitLab or GitHub.
--  Vs Code Devcontainers: See [installation](https://code.visualstudio.com/docs/remote/containers#_installation)
+-  VS Code Dev Containers: See [installation](https://code.visualstudio.com/docs/remote/containers#_installation)
 and the [quick start](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container) sections.
 -  GitHub Codespaces: The user needs to be part of the Codespaces beta or the repository must live under an organization.
    - When using GitHub Codespaces we need to make ports public, [see instructions](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace#sharing-a-port).
@@ -90,7 +90,6 @@ and the [quick start](https://code.visualstudio.com/docs/remote/containers#_quic
 
 Wokwi offers debugging with GDB.
 - UI approach:
-    Debug using with VsCode or Gitpod is also possible:
     1. Run the Wokwi Simulation
     2. Go to `Run and Debug` section of the IDE (`Ctrl-Shift-D or Cmd-Shift-D`)
     3. Choose the proper session:
@@ -112,10 +111,10 @@ Wokwi offers debugging with GDB.
 
 # Integrating devcontainer in existing repositories
 
-- For devcontainer support in VSCode and GH Codespaces:
-  - Copy the `.devcontainer` folder to your repository.Devcontainers in Gitpod:
-- For devcontainer support in Gitpod:
-  - Copy the `.gitpod.yml` and `.gitpod.Dockergile` files to your repository.
+- For Dev Container support in VS Code and GH Codespaces:
+  - Copy the `.devcontainer` folder to your repository.
+- For Dev Container support in Gitpod:
+  - Copy the `.gitpod.yml` and `.gitpod.Dockerfile` files to your repository.
     - For instructions about how to add a "Open in Gitpod" button, see their
       [official documentation](https://www.gitpod.io/docs/getting-started#open-in-gitpod-button)
 - For task and debugging integration:
