@@ -92,10 +92,7 @@ Wokwi offers debugging with GDB.
 - UI approach:
     1. Run the Wokwi Simulation
     2. Go to `Run and Debug` section of the IDE (`Ctrl-Shift-D or Cmd-Shift-D`)
-    3. Choose the proper session:
-        - `VsCode: Wokwi Debug`
-        - `Gitpod: Wokwi Debug`
-    4. Start Debugging (`F5`)
+    3. Start Debugging (`F5`)
     > ** Note **
     >
     > If using another target be sure to modify `gdbpath` of `.vscode/launch.json`.

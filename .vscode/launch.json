@@ -4,7 +4,7 @@
     {
       "type": "gdb",
       "request": "attach",
-      "name": "VsCode: Wokwi Debug",
+      "name": "Wokwi Debug",
       "executable": "${workspaceFolder}/build/app-template.elf",
       "target": "localhost:9333",
       "remote": true,
