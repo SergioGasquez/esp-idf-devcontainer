@@ -24,7 +24,8 @@
     "yzhang.markdown-all-in-one",
     "espressif.esp-idf-extension",
     "webfreak.debug",
-    "actboy168.tasks"
+    "actboy168.tasks",
+    "ms-vscode.cpptools"
   ],
   "forwardPorts": [
     9012,
