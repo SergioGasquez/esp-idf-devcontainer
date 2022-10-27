@@ -3,5 +3,6 @@
   "idf.openOcdConfigs": [
     "interface/ftdi/esp32_devkitj_v1.cfg",
     "target/esp32.cfg"
-  ]
+  ],
+  "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }

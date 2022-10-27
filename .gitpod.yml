@@ -11,6 +11,7 @@ vscode:
     - yzhang.markdown-all-in-one
     - webfreak.debug
     - actboy168.tasks
+    - ms-vscode.cpptools
 ports:
   - port: 9012
     visibility: public
