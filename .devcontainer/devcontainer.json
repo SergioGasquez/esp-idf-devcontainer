@@ -9,24 +9,28 @@
       "ESP_IDF_VERSION": "release/v4.4"
     }
   },
-  "settings": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
-    "editor.formatOnType": true,
-    "idf.espIdfPath": "${env:IDF_PATH}",
-    "idf.toolsPath": "${env:IDF_TOOLS_PATH}",
-    "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python",
-    "idf.customExtraPaths": "${env:PATH}"
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "modifications",
+        "editor.formatOnType": true,
+        "idf.espIdfPath": "${env:IDF_PATH}",
+        "idf.toolsPath": "${env:IDF_TOOLS_PATH}",
+        "idf.pythonBinPath": "${env:IDF_PYTHON_ENV_PATH}/bin/python",
+        "idf.customExtraPaths": "${env:PATH}"
+      },
+      "extensions": [
+        "mutantdino.resourcemonitor",
+        "yzhang.markdown-all-in-one",
+        "espressif.esp-idf-extension",
+        "webfreak.debug",
+        "actboy168.tasks",
+        "ms-vscode.cpptools"
+      ]
+    }
   },
-  "extensions": [
-    "mutantdino.resourcemonitor",
-    "yzhang.markdown-all-in-one",
-    "espressif.esp-idf-extension",
-    "webfreak.debug",
-    "actboy168.tasks",
-    "ms-vscode.cpptools"
-  ],
   "forwardPorts": [
     9012,
     9333,
